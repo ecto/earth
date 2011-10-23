@@ -11,6 +11,11 @@
   "engines": {
     "node": "*"
   },
-  "dependencies": {},
+  "bin": {
+    "earth": "earth.js"
+  },
+  "dependencies": {
+    "colors": "*"
+  },
   "devDependencies": {}
 }
