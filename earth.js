@@ -14,7 +14,7 @@ function write(data){
 }
 
 var earth = {
-  fps: 0.3,
+  fps: 0.4,
   escape: '\033[',
   frames: [],
   frame: 0,
@@ -38,7 +38,8 @@ var earth = {
         var x = Math.floor(earth.width / 2) + Number(j) - Math.floor(row.length / 2),
             y = Math.ceil(earth.height / 2) + Number(i) - Math.ceil(rows.length / 2);
         earth.pos(x, y);
-        write(row[j]);
+        if (row[j] == ' ') console.log('.'.blue);
+        else write(row[j].green);
       }
     }
     earth.pos(earth.width, earth.height);
