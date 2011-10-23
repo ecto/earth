@@ -2,7 +2,7 @@
   "author": "Cam Pedersen <diffference@gmail.com> (htttp://campedersen.com/)",
   "name": "earth",
   "description": "An animation of Earth",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git://github.com/ecto/earth.git"
