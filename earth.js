@@ -31,8 +31,6 @@ var earth = {
         width = window[1],
         height = window[0];
     earth.clear();
-    //earth.pos(Math.floor(width / 2) - 2, 5);
-    //write('ecto'.rainbow);
     var frame = earth.frames[earth.frame];
     var rows = frame.split('\n');
     for (var i in rows) {
@@ -45,6 +43,12 @@ var earth = {
         else write(row[j].green);
       }
     }
+    // branding
+    var slug = 'ecto',
+        x = Math.floor(width / 2) - Math.floor(slug.length / 2),
+        y = height - 5;
+    earth.pos(x, y);
+    write(slug.rainbow);
     earth.pos(width, height);
   },
 
