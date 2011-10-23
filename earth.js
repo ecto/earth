@@ -46,7 +46,7 @@ var earth = {
 
   load: function(cb){
     for (var i = 0; i < 15; i++) {
-      var frame = fs.readFileSync('frames/' + i).toString();
+      var frame = fs.readFileSync(__dirname + '/frames/' + i).toString();
       earth.frames.push(frame);
     }
     cb();
