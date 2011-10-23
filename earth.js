@@ -18,21 +18,30 @@ var earth = {
   escape: '\033[',
   frames: [],
   frame: 0,
-  width: window[0],
-  height: window[1],
+  height: Number(window[0]),
+  width: Number(window[1]),
 
   clear: function(){
     write(earth.escape + '2J');
   },
   pos: function(x, y){
-    write(earth.escape + y + ';' + x + 'H');
+    write(earth.escape + String(y) + ';' + String(x) + 'f');
   },
 
   renderFrame: function(){
     earth.clear();
-    console.log(earth.frame);
     var frame = earth.frames[earth.frame];
-    write(frame);
+    var rows = frame.split('\n');
+    for (var i in rows) {
+      var row = rows[i].trim().split('');
+      for (var j in row) {
+        var x = Math.floor(earth.width / 2) + Number(j) - Math.floor(row.length / 2),
+            y = Math.ceil(earth.height / 2) + Number(i) - Math.ceil(rows.length / 2);
+        earth.pos(x, y);
+        write(row[j]);
+      }
+    }
+    earth.pos(earth.width, earth.height);
   },
 
   load: function(cb){
