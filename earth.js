@@ -27,9 +27,8 @@ var earth = {
   },
 
   renderFrame: function(){
-    var window = tty.getWindowSize(1),
-        width = window[1],
-        height = window[0];
+    var width = process.stdout.columns;
+    var height = process.stdout.rows;
     earth.clear();
     var frame = earth.frames[earth.frame];
     var rows = frame.split('\n');
